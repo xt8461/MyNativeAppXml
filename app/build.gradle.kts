@@ -27,15 +27,21 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
 
 dependencies {
+    implementation("com.facebook.react:react-android:0.79.2")
+    implementation("com.facebook.react:hermes-android:0.79.2")
+    implementation("com.facebook.soloader:soloader:0.10.5")
+
+    //implementation("com.callstack:rnbrownfield:0.0.1-local")
+    implementation("com.example.reactbrownfield:reactbrownfield:0.0.1-local")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -45,4 +51,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
 }
