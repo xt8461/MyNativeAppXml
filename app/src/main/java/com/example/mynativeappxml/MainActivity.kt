@@ -6,7 +6,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.reactbrownfield.RNBridgeManager
+import com.facebook.react.ReactFragment
+import com.facebook.react.defaults.DefaultReactHost
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,12 +24,12 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        //RNBridgeManager.shared.initialize(this.application)
-
+//        RNBridgeManager.shared.initialize(this.application)
+        val rnAppFragment = RNAppFragment()
         showRNAppButton = findViewById(R.id.show_rn_app_btn)
         showRNAppButton.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, RNAppFragment())
+                .replace(R.id.fragmentContainer, rnAppFragment)
                 .addToBackStack(null)
                 .commit()
         }
